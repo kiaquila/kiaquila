@@ -1,16 +1,16 @@
-## Hi there 👋
+# Hi there, I'm Kristina Aquila 👋
 
-<!--
-**kiaquila/kiaquila** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<picture>
+  <source
+    media="(prefers-reduced-motion: reduce)"
+    srcset="https://raw.githubusercontent.com/kiaquila/kiaquila/comet-graph/comet-reduced.svg"
+  />
+  <img
+    alt="cinematic comet contribution graph for kiaquila"
+    src="https://raw.githubusercontent.com/kiaquila/kiaquila/comet-graph/comet.svg"
+  />
+</picture>
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Rendered weekly by [comet-contribution-graph](https://github.com/kiaquila/comet-contribution-graph).
