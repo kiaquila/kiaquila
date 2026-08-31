@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kristina Aquila — GitHub profile draft</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0d1117;
+      --surface: #151b23;
+      --border: #3d444d;
+      --text: #f0f6fc;
+      --muted: #9198a1;
+      --link: #4493f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 14px; font-size: 2em; }
+    h2 { margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); font-size: 1.5em; }
+    h3 { margin: 28px 0 16px; font-size: 1.25em; }
+    p { max-width: 820px; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { font-weight: 650; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 28px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) { background: var(--surface); }
+    ol { padding-left: 26px; }
+    li { margin: 10px 0; padding-left: 4px; }
+    hr { margin: 38px 0 30px; border: 0; border-top: 1px solid var(--border); }
+    .tagline { margin: 0 0 20px; color: var(--text); }
+    .intro { font-size: 1.04em; color: #c9d1d9; }
+    .contact { margin: 18px 0 38px; }
+    .contribution-sky { display: block; width: 100%; margin-top: 12px; border-radius: 8px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 28px; }
+    .badges img { display: block; height: 28px; }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --surface: #f6f8fa;
+        --border: #d1d9e0;
+        --text: #1f2328;
+        --muted: #59636e;
+        --link: #0969da;
+      }
+      .intro { color: #25292e; }
+    }
+
+    @media (max-width: 640px) {
+      main { width: min(100% - 28px, 920px); padding-top: 28px; }
+      table, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { margin: 0 0 12px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+      td { border: 0; }
+      td + td { border-top: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kristina Aquila</h1>
+    <p class="tagline"><strong>AI Web Designer &amp; Web Developer &amp; Illustrator · Building AI Workflows &amp; Automation</strong></p>
+    <p class="intro">I design and build AI-driven websites and illustrations that are not generic. Every project starts from one clear idea instead of a template — so it actually stands out, and gives people a reason to stick around.</p>
+    <p class="badges" aria-label="GitHub and contact badges">
+      <a href="https://github.com/kiaquila?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/kiaquila?style=for-the-badge&amp;logo=github&amp;label=Follow&amp;color=14B8A6"></a>
+      <a href="https://github.com/kiaquila/unicorn-hub/stargazers"><img alt="Unicorn Hub stars" src="https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&amp;logo=github&amp;label=Unicorn-hub&amp;color=2563EB"></a>
+      <a href="mailto:ks@ks-design.art"><img alt="Email Kristina" src="https://img.shields.io/badge/Email-Let%27s%20talk-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white"></a>
+    </p>
+
+    <h2>What I do</h2>
+    <table aria-label="Services">
+      <tbody>
+        <tr><td><strong>Landing pages</strong></td><td>A full single-page site — from the first idea to a finished, responsive build.</td></tr>
+        <tr><td><strong>Websites</strong></td><td>Multi-page sites that stay consistent in structure, style, and feel from page to page.</td></tr>
+        <tr><td><strong>Illustrations</strong></td><td>Custom AI-assisted illustrations with their own mood and art direction, made specifically for your project.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Selected projects</h2>
+    <table aria-label="Selected projects">
+      <thead><tr><th>Project</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><strong><a href="https://ember.ks-design.art/">Ember</a></strong></td><td>An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork.</td></tr>
+        <tr><td><strong><a href="https://dreamboard-eta.vercel.app/">Dreamboard</a></strong></td><td>A lightweight visual editor for building your own vision board — goals, dreams, and inspiration, all in one place.</td></tr>
+        <tr><td><strong><a href="https://alex-neon.ks-design.workers.dev/">Alex Neon</a></strong></td><td>A neon-lit portfolio promo page, designed to the client's brief, with an interactive neuro-animation built in to keep visitors hooked.</td></tr>
+        <tr><td><strong><a href="https://misha.ks-design.workers.dev/">Mikhail Orlov</a></strong></td><td>A no-frills, practical one-page CV portfolio for a backend developer — one clean, calm scrolling sheet.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How the work goes</h2>
+    <ol>
+      <li><strong>I find the meaning.</strong> I gather what matters and help you bring it to the surface — the ideas your audience actually needs to hear.</li>
+      <li><strong>A design concept.</strong> I turn that direction into a focused concept and build the first version. If it clicks, we move forward — if not, I can adjust the concept to fit what you need.</li>
+      <li><strong>Two rounds of edits.</strong> I refine the work based on your feedback — two rounds are included in the package. And it doesn't stop there: I'm always around if you want more changes later, for an extra fee.</li>
+      <li><strong>The finished site.</strong> You get the complete, polished website — all source files, code, and assets included. Hosting on my end can be arranged separately, for an extra fee, if you'd like.</li>
+    </ol>
+
+    <hr>
+    <h3>I'll design something that pulls people in and sells — so your customers can't look away, and want to come back.</h3>
+    <p class="contact"><a href="mailto:ks@ks-design.art">Email</a> · <a href="https://ks-design.art">Portfolio</a></p>
+
+    <h2>Contribution sky</h2>
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/kiaquila/kiaquila/comet-graph/comet-reduced.svg">
+      <img class="contribution-sky" alt="Kristina Aquila's cinematic contribution sky" src="https://raw.githubusercontent.com/kiaquila/kiaquila/comet-graph/comet.svg">
+    </picture>
+  </main>
+</body>
+</html>
