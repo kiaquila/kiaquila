@@ -1,0 +1,57 @@
+name: profile-ci
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  baseline-checks:
+    name: baseline-checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate profile artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s README.md
+          test -s DESIGN.md
+          test -s profile-preview.html
+          grep -Fq '<picture>' README.md
+          grep -Fq '<!doctype html>' profile-preview.html
+
+  guard:
+    name: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Reject unresolved or stale content
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -RInE '^(<<<<<<<|=======|>>>>>>>)' -- README.md DESIGN.md profile-preview.html
+          ! grep -RInF 'kristina@ks-design.art' -- README.md profile-preview.html
+          git diff --check
+
+  ai-review:
+    name: AI Review
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify approved profile copy contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'AI Web Designer & Web Developer & Illustrator · Building AI Workflows & Automation' README.md
+          grep -Fq 'that are not generic' README.md
+          grep -Fq 'label=Unicorn-hub' README.md
+          grep -Fq 'mailto:ks@ks-design.art' README.md
+          grep -Fq '## Contribution sky' README.md
