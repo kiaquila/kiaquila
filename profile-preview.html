@@ -58,7 +58,8 @@
     li { margin: 10px 0; padding-left: 4px; }
     hr { margin: 38px 0 30px; border: 0; border-top: 1px solid var(--border); }
     .hero { text-align: center; }
-    .hero > img { display: block; width: 100%; margin: 0 0 30px; border-radius: 8px; }
+    .hero-banner { display: block; margin: 0 0 30px; }
+    .hero-banner img { display: block; width: 100%; border-radius: 8px; }
     .tagline { margin: 0 0 20px; color: var(--text); }
     .intro { font-size: 1.04em; color: #c9d1d9; }
     .contact { margin: 18px 0 38px; }
@@ -92,7 +93,10 @@
 <body>
   <main>
     <section class="hero">
-      <img alt="Kristina Aquila working in a creative GitHub workflow" src="assets/kristina-github-pipeline.gif">
+      <picture class="hero-banner">
+        <source media="(prefers-reduced-motion: reduce)" srcset="assets/kristina-github-pipeline-static.png">
+        <img alt="Kristina Aquila working in a creative GitHub workflow" src="assets/kristina-github-pipeline.gif">
+      </picture>
       <h1>Kristina Aquila</h1>
       <p class="tagline"><strong>AI Web Designer &amp; Web Developer &amp; Illustrator · Building AI Workflows &amp; Automation</strong></p>
       <p class="intro">I use AI to design websites and illustrations that don't feel AI-made — authentic, memorable, and impossible to scroll past.</p>
