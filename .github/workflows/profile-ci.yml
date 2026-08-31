@@ -51,7 +51,11 @@ jobs:
         run: |
           set -euo pipefail
           grep -Fq 'AI Web Designer & Web Developer & Illustrator · Building AI Workflows & Automation' README.md
-          grep -Fq 'that are not generic' README.md
+          grep -Fq "I use AI to design websites and illustrations that don't feel AI-made" README.md
           grep -Fq 'label=Unicorn-hub' README.md
+          grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
+          grep -Fq 'https://www.instagram.com/ks_aquila' README.md
+          grep -Fq 'https://t.me/ks_aquila' README.md
+          test -s assets/kristina-github-pipeline.gif
           grep -Fq 'mailto:ks@ks-design.art' README.md
           grep -Fq '## Contribution sky' README.md

@@ -11,7 +11,7 @@
 
 - Personality: bold, art-directed, memorable, direct, aesthetically exacting
 - Trust signals: nine-plus years in web development; finished live projects; an explicit, human process; an active contribution graph; live follower and project-star badges
-- Avoid: generic AI language, template-like claims, price lists, technology inventories, decorative badge walls beyond the single compact intro widget, or a splash/banner image in this draft
+- Avoid: generic AI language, template-like claims, price lists, technology inventories, and decorative badge walls beyond the single compact intro widget
 
 ## Product goals
 
@@ -29,7 +29,7 @@
 
 - Primary navigation: linear README flow with inline project and contact links
 - Core routes/screens: one GitHub profile README; one local HTML preview
-- Content hierarchy: positioning → offer → selected proof → process → promise/contact → contribution signal
+- Content hierarchy: animated hero → positioning → offer → selected proof → process → promise/contact → contribution signal
 
 ## Design principles
 
@@ -40,17 +40,17 @@
 
 ## Visual language
 
-- Color: inherit GitHub theme; the generated contribution sky supplies the cinematic accent
+- Color: inherit GitHub theme; the warm animated hero and generated contribution sky supply the cinematic accents
 - Typography: GitHub-native Markdown hierarchy; local preview mirrors GitHub's system type stack
-- Spacing/layout rhythm: short sections separated by clear headings and restrained rules
+- Spacing/layout rhythm: centered hero and closing CTA, with short sections separated by clear headings and restrained rules
 - Shape/radius/elevation: GitHub-native table treatment; subtle cards only in the local preview
-- Motion: none in profile copy; contribution asset provides its own motion and includes a reduced-motion source
-- Imagery/iconography: no hero/splash image; contribution sky plus a restrained Shields.io badge strip matching the reference profile
+- Motion: the hero GIF provides the primary motion; the contribution asset includes a reduced-motion source
+- Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, Pinterest, Instagram, and email links
 
 ## Components
 
 - Existing components to reuse: generated comet contribution `<picture>` block and reduced-motion fallback
-- New/changed components: three-badge intro widget for followers, Unicorn Hub stars, and email; two-column services table; two-column projects table; numbered process list; two-link contact line
+- New/changed components: centered animated hero; five-badge intro widget for followers, Unicorn Hub stars, Pinterest, Instagram, and email; service bullets; two-column projects table; numbered process list; centered email and Telegram contact line
 - Variants and states: GitHub light/dark themes; reduced-motion contribution image
 - Token/component ownership: GitHub owns production rendering; `profile-preview.html` owns preview-only CSS
 
@@ -87,10 +87,10 @@
 
 - Framework/styling system: GitHub-flavored Markdown with minimal inline HTML
 - Design-token constraints: GitHub controls the production theme; preview CSS must not imply unsupported README styling
-- Performance constraints: no new heavy assets; reuse the existing remotely generated contribution SVG and lightweight dynamic Shields.io badges
+- Performance constraints: one user-provided 1200×400 GIF hero, the existing remotely generated contribution SVG, and lightweight dynamic Shields.io badges
 - Compatibility constraints: public GitHub profile rendering, dark/light theme, and reduced motion
 - Test/screenshot expectations: inspect local HTML in Chrome; verify link targets, section order, responsive layout, and contribution image fallback
 
 ## Open questions
 
-- [ ] Decide whether a custom banner should be introduced in a later version; intentionally excluded from this draft.
+- [x] Add the user-provided animated hero banner.
