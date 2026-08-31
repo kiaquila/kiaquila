@@ -23,7 +23,11 @@ jobs:
           test -s README.md
           test -s DESIGN.md
           test -s profile-preview.html
+          test -s assets/kristina-github-pipeline.gif
+          test -s assets/kristina-github-pipeline-static.png
           grep -Fq '<picture>' README.md
+          grep -Fq 'srcset="./assets/kristina-github-pipeline-static.png"' README.md
+          grep -Fq 'srcset="assets/kristina-github-pipeline-static.png"' profile-preview.html
           grep -Fq '<!doctype html>' profile-preview.html
 
   guard:
@@ -56,6 +60,5 @@ jobs:
           grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
           grep -Fq 'https://www.instagram.com/ks_aquila' README.md
           grep -Fq 'https://t.me/ks_aquila' README.md
-          test -s assets/kristina-github-pipeline.gif
           grep -Fq 'mailto:ks@ks-design.art' README.md
           grep -Fq '## Contribution sky' README.md

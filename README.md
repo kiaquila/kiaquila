@@ -1,5 +1,15 @@
 <div align="center">
-  <img src="./assets/kristina-github-pipeline.gif" alt="Kristina Aquila working in a creative GitHub workflow" width="100%" />
+  <picture>
+    <source
+      media="(prefers-reduced-motion: reduce)"
+      srcset="./assets/kristina-github-pipeline-static.png"
+    />
+    <img
+      src="./assets/kristina-github-pipeline.gif"
+      alt="Kristina Aquila working in a creative GitHub workflow"
+      width="100%"
+    />
+  </picture>
 
 # Kristina Aquila
 

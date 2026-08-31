@@ -44,14 +44,14 @@
 - Typography: GitHub-native Markdown hierarchy; local preview mirrors GitHub's system type stack
 - Spacing/layout rhythm: centered hero and closing CTA, with short sections separated by clear headings and restrained rules
 - Shape/radius/elevation: GitHub-native table treatment; subtle cards only in the local preview
-- Motion: the hero GIF provides the primary motion; the contribution asset includes a reduced-motion source
+- Motion: the hero GIF provides the primary motion; both the hero and contribution art switch to static sources for reduced-motion visitors
 - Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, Pinterest, Instagram, and email links
 
 ## Components
 
 - Existing components to reuse: generated comet contribution `<picture>` block and reduced-motion fallback
-- New/changed components: centered animated hero; five-badge intro widget for followers, Unicorn Hub stars, Pinterest, Instagram, and email; service bullets; two-column projects table; numbered process list; centered email and Telegram contact line
-- Variants and states: GitHub light/dark themes; reduced-motion contribution image
+- New/changed components: centered animated hero with a static fallback; five-badge intro widget for followers, Unicorn Hub stars, Pinterest, Instagram, and email; service bullets; two-column projects table; numbered process list; centered email and Telegram contact line
+- Variants and states: GitHub light/dark themes; reduced-motion hero and contribution images
 - Token/component ownership: GitHub owns production rendering; `profile-preview.html` owns preview-only CSS
 
 ## Accessibility
@@ -60,7 +60,7 @@
 - Keyboard/focus behavior: all links remain native anchors
 - Contrast/readability: avoid text rendered inside images; keep paragraphs short
 - Screen-reader semantics: meaningful headings, table headers, link labels, and contribution image alt text
-- Reduced motion and sensory considerations: preserve the existing `prefers-reduced-motion` asset source
+- Reduced motion and sensory considerations: serve static hero and contribution assets through `prefers-reduced-motion` sources
 
 ## Responsive behavior
 
@@ -87,9 +87,9 @@
 
 - Framework/styling system: GitHub-flavored Markdown with minimal inline HTML
 - Design-token constraints: GitHub controls the production theme; preview CSS must not imply unsupported README styling
-- Performance constraints: one user-provided 1200×400 GIF hero, the existing remotely generated contribution SVG, and lightweight dynamic Shields.io badges
+- Performance constraints: one user-provided 1200×400 GIF hero, a lightweight static PNG fallback, the existing remotely generated contribution SVG, and dynamic Shields.io badges
 - Compatibility constraints: public GitHub profile rendering, dark/light theme, and reduced motion
-- Test/screenshot expectations: inspect local HTML in Chrome; verify link targets, section order, responsive layout, and contribution image fallback
+- Test/screenshot expectations: inspect local HTML in Chrome; verify link targets, section order, responsive layout, and both reduced-motion image fallbacks
 
 ## Open questions
 
