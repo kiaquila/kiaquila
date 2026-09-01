@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kristina Aquila — GitHub profile draft</title>
+  <title>Kristina Aquila - GitHub profile draft</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -54,13 +54,18 @@
 
     tr:nth-child(even) { background: var(--surface); }
     ol { padding-left: 26px; }
+    ul { padding-left: 26px; }
     li { margin: 10px 0; padding-left: 4px; }
     hr { margin: 38px 0 30px; border: 0; border-top: 1px solid var(--border); }
+    .hero { text-align: center; }
+    .hero-banner { display: block; margin: 0 0 30px; }
+    .hero-banner img { display: block; width: 100%; border-radius: 8px; }
     .tagline { margin: 0 0 20px; color: var(--text); }
     .intro { font-size: 1.04em; color: #c9d1d9; }
     .contact { margin: 18px 0 38px; }
+    .footer-cta { text-align: center; }
     .contribution-sky { display: block; width: 100%; margin-top: 12px; border-radius: 8px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 28px; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px 0 28px; }
     .badges img { display: block; height: 28px; }
 
     @media (prefers-color-scheme: light) {
@@ -87,46 +92,54 @@
 </head>
 <body>
   <main>
-    <h1>Kristina Aquila</h1>
-    <p class="tagline"><strong>AI Web Designer &amp; Web Developer &amp; Illustrator · Building AI Workflows &amp; Automation</strong></p>
-    <p class="intro">I design and build AI-driven websites and illustrations that are not generic. Every project starts from one clear idea instead of a template — so it actually stands out, and gives people a reason to stick around.</p>
-    <p class="badges" aria-label="GitHub and contact badges">
-      <a href="https://github.com/kiaquila?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/kiaquila?style=for-the-badge&amp;logo=github&amp;label=Follow&amp;color=14B8A6"></a>
-      <a href="https://github.com/kiaquila/unicorn-hub/stargazers"><img alt="Unicorn Hub stars" src="https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&amp;logo=github&amp;label=Unicorn-hub&amp;color=2563EB"></a>
-      <a href="mailto:ks@ks-design.art"><img alt="Email Kristina" src="https://img.shields.io/badge/Email-Let%27s%20talk-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white"></a>
-    </p>
+    <section class="hero">
+      <picture class="hero-banner">
+        <source media="(prefers-reduced-motion: reduce)" srcset="assets/kristina-github-pipeline-static.png">
+        <img alt="Kristina Aquila working in a creative GitHub workflow" src="assets/kristina-github-pipeline.gif">
+      </picture>
+      <h1>Kristina Aquila</h1>
+      <p class="tagline"><strong>AI Web Designer &amp; Web Developer &amp; Illustrator · Building AI Workflows &amp; Automation</strong></p>
+      <p class="intro">I use AI to design websites and illustrations that don't feel AI-made — authentic, memorable, and impossible to scroll past.</p>
+      <p class="badges" aria-label="GitHub and contact badges">
+        <a href="https://github.com/kiaquila?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/kiaquila?style=for-the-badge&amp;logo=github&amp;label=Follow&amp;color=14B8A6"></a>
+        <a href="https://github.com/kiaquila/unicorn-hub/stargazers"><img alt="Unicorn Hub stars" src="https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&amp;logo=github&amp;label=Unicorn-hub&amp;color=2563EB"></a>
+        <a href="https://tr.pinterest.com/ks_aquila"><img alt="Pinterest Kristina" src="https://img.shields.io/badge/Pinterest-8B6FCF?style=for-the-badge&amp;logo=pinterest&amp;logoColor=white"></a>
+        <a href="https://www.instagram.com/ks_aquila"><img alt="Instagram Kristina" src="https://img.shields.io/badge/Instagram-4F6FD7?style=for-the-badge&amp;logo=instagram&amp;logoColor=white"></a>
+        <a href="mailto:ks@ks-design.art"><img alt="Email Kristina" src="https://img.shields.io/badge/Email-Let%27s%20talk-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white"></a>
+      </p>
+    </section>
 
     <h2>What I do</h2>
-    <table aria-label="Services">
-      <tbody>
-        <tr><td><strong>Landing pages</strong></td><td>A full single-page site — from the first idea to a finished, responsive build.</td></tr>
-        <tr><td><strong>Websites</strong></td><td>Multi-page sites that stay consistent in structure, style, and feel from page to page.</td></tr>
-        <tr><td><strong>Illustrations</strong></td><td>Custom AI-assisted illustrations with their own mood and art direction, made specifically for your project.</td></tr>
-      </tbody>
-    </table>
+    <ul>
+      <li><strong>Landing pages:</strong> a full single-page site, from the first idea through a finished, responsive build.</li>
+      <li><strong>Websites:</strong> multi-page sites that stay consistent in structure, style, and feel from page to page.</li>
+      <li><strong>Illustrations:</strong> custom AI-assisted illustrations with their own mood and art direction, made specifically for your project.</li>
+    </ul>
 
     <h2>Selected projects</h2>
     <table aria-label="Selected projects">
       <thead><tr><th>Project</th><th>What it is</th></tr></thead>
       <tbody>
         <tr><td><strong><a href="https://ember.ks-design.art/">Ember</a></strong></td><td>An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork.</td></tr>
-        <tr><td><strong><a href="https://dreamboard-eta.vercel.app/">Dreamboard</a></strong></td><td>A lightweight visual editor for building your own vision board — goals, dreams, and inspiration, all in one place.</td></tr>
-        <tr><td><strong><a href="https://alex-neon.ks-design.workers.dev/">Alex Neon</a></strong></td><td>A neon-lit portfolio promo page, designed to the client's brief, with an interactive neuro-animation built in to keep visitors hooked.</td></tr>
-        <tr><td><strong><a href="https://misha.ks-design.workers.dev/">Mikhail Orlov</a></strong></td><td>A no-frills, practical one-page CV portfolio for a backend developer — one clean, calm scrolling sheet.</td></tr>
+        <tr><td><strong><a href="https://dreamboard-eta.vercel.app/">Dreamboard</a></strong></td><td>A lightweight visual editor for building your own vision board: goals, dreams, and inspiration in one place.</td></tr>
+        <tr><td><strong><a href="https://alex-neon.ks-design.workers.dev/">Alex Neon</a></strong></td><td>A neon-lit portfolio promo page designed to the client's brief, with an interactive neuro-animation to keep visitors hooked.</td></tr>
+        <tr><td><strong><a href="https://misha.ks-design.workers.dev/">Mikhail Orlov</a></strong></td><td>A no-frills, practical one-page CV portfolio for a backend developer: one clean, calm scrolling sheet.</td></tr>
       </tbody>
     </table>
 
     <h2>How the work goes</h2>
     <ol>
-      <li><strong>I find the meaning.</strong> I gather what matters and help you bring it to the surface — the ideas your audience actually needs to hear.</li>
-      <li><strong>A design concept.</strong> I turn that direction into a focused concept and build the first version. If it clicks, we move forward — if not, I can adjust the concept to fit what you need.</li>
-      <li><strong>Two rounds of edits.</strong> I refine the work based on your feedback — two rounds are included in the package. And it doesn't stop there: I'm always around if you want more changes later, for an extra fee.</li>
-      <li><strong>The finished site.</strong> You get the complete, polished website — all source files, code, and assets included. Hosting on my end can be arranged separately, for an extra fee, if you'd like.</li>
+      <li><strong>I collect the meaning.</strong> Piece by piece, I gather what matters and surface the value you bring — even the parts you don't always see yourself.</li>
+      <li><strong>A design concept.</strong> I turn that direction into a focused concept and build the first version. If it clicks, we move forward. If not, I can adjust the concept to fit what you need.</li>
+      <li><strong>Two rounds of edits.</strong> I refine the work based on your feedback. Two rounds are included in the package. I'm always around if you want more changes later, for an extra fee.</li>
+      <li><strong>The finished site.</strong> You get the complete, polished website with all source files, code, and assets included. Hosting on my end can be arranged separately, for an extra fee, if you'd like.</li>
     </ol>
 
     <hr>
-    <h3>I'll design something that pulls people in and sells — so your customers can't look away, and want to come back.</h3>
-    <p class="contact"><a href="mailto:ks@ks-design.art">Email</a> · <a href="https://ks-design.art">Portfolio</a></p>
+    <section class="footer-cta">
+      <h3>Let's make your brand impossible to ignore</h3>
+      <p class="contact"><a href="mailto:ks@ks-design.art">Email</a> · <a href="https://t.me/ks_aquila">Telegram</a></p>
+    </section>
 
     <h2>Contribution sky</h2>
     <picture>
