@@ -19,8 +19,8 @@ I use AI to design websites and illustrations that don't feel AI-made — authen
 
 [![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=14B8A6)](https://github.com/kiaquila?tab=followers)
 [![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=2563EB)](https://github.com/kiaquila/unicorn-hub/stargazers)
-[![Pinterest Kristina](https://img.shields.io/badge/Pinterest-BD081C?style=for-the-badge&logo=pinterest&logoColor=white)](https://tr.pinterest.com/ks_aquila)
-[![Instagram Kristina](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ks_aquila)
+[![Pinterest Kristina](https://img.shields.io/badge/Pinterest-8B6FCF?style=for-the-badge&logo=pinterest&logoColor=white)](https://tr.pinterest.com/ks_aquila)
+[![Instagram Kristina](https://img.shields.io/badge/Instagram-4F6FD7?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ks_aquila)
 [![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ks@ks-design.art)
 </div>
 
