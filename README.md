@@ -17,11 +17,11 @@
 
 I use AI to design websites and illustrations that don't feel AI-made — authentic, memorable, and impossible to scroll past.
 
-[![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=14B8A6)](https://github.com/kiaquila?tab=followers)
-[![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=2563EB)](https://github.com/kiaquila/unicorn-hub/stargazers)
-[![Pinterest Kristina](https://img.shields.io/badge/Pinterest-8B6FCF?style=for-the-badge&logo=pinterest&logoColor=white)](https://tr.pinterest.com/ks_aquila)
-[![Instagram Kristina](https://img.shields.io/badge/Instagram-4F6FD7?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ks_aquila)
-[![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ks@ks-design.art)
+[![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=7C3AED&labelColor=55565A)](https://github.com/kiaquila?tab=followers)
+[![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=7263E8&labelColor=55565A)](https://github.com/kiaquila/unicorn-hub/stargazers)
+[![Pinterest Kristina](https://img.shields.io/badge/Pinterest-6382E2?style=for-the-badge&logo=pinterest&logoColor=white)](https://tr.pinterest.com/ks_aquila)
+[![Instagram Kristina](https://img.shields.io/badge/Instagram-4B9DDC?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ks_aquila)
+[![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-06B6D4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=55565A)](mailto:ks@ks-design.art)
 </div>
 
 ## What I do
