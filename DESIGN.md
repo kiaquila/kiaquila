@@ -40,7 +40,7 @@
 
 ## Visual language
 
-- Color: inherit GitHub theme; the warm animated hero and generated contribution sky supply the cinematic accents
+- Color: inherit GitHub theme; the warm animated hero and generated contribution sky supply the cinematic accents; the badge strip carries the ks-design.art brand pair (`--brand-dot-a` #818CF8 into `--brand-dot-b` #22D3EE), stretched wide to violet #7C3AED / turquoise #06B6D4 so five chips read as one sweep, on the neutral ink label #55565A
 - Typography: GitHub-native Markdown hierarchy; local preview mirrors GitHub's system type stack
 - Spacing/layout rhythm: centered hero and closing CTA, with short sections separated by clear headings and restrained rules
 - Shape/radius/elevation: GitHub-native table treatment; subtle cards only in the local preview
@@ -86,7 +86,7 @@
 ## Implementation constraints
 
 - Framework/styling system: GitHub-flavored Markdown with minimal inline HTML
-- Design-token constraints: GitHub controls the production theme; preview CSS must not imply unsupported README styling
+- Design-token constraints: GitHub controls the production theme; preview CSS must not imply unsupported README styling; badge colours are the only place the profile spends brand colour, and they track the `ks` repository's `website/src/styles/tokens.css` brand pair
 - Performance constraints: one user-provided 1200×400 GIF hero, a lightweight static PNG fallback, the existing remotely generated contribution SVG, and dynamic Shields.io badges
 - Compatibility constraints: public GitHub profile rendering, dark/light theme, and reduced motion
 - Test/screenshot expectations: inspect local HTML in Chrome; verify link targets, section order, responsive layout, and both reduced-motion image fallbacks
