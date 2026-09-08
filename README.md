@@ -35,7 +35,7 @@ I use AI to design websites and illustrations that don't feel AI-made — authen
 | Project | What it is |
 |---|---|
 | **[Ember](https://ember.ks-design.art/)** | An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork. |
-| **[Fathom](https://fathom.ks-design.art/)** | An interactive school of shimmering goldfish drifting through painted water that changes with the visitor's local time of day. |
+| **[Fathom](https://fathom.ks-design.art/)** | Sequined goldfish drift through painted depths, an interactive meditation station in shimmer and slow water. |
 | **[Dreamboard](https://dreamboard-eta.vercel.app/)** | A lightweight visual editor for building your own vision board: goals, dreams, and inspiration in one place. |
 | **[Alex Neon](https://alex-neon.ks-design.workers.dev/)** | A neon-lit portfolio promo page with an interactive neuro-animation to keep visitors hooked, designed to the client's brief. |
 | **[Mikhail Orlov](https://misha.ks-design.workers.dev/)** | A no-frills, practical one-page CV portfolio for a backend developer: one clean, calm scrolling sheet. |
