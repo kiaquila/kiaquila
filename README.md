@@ -35,13 +35,14 @@ I use AI to design websites and illustrations that don't feel AI-made — authen
 | Project | What it is |
 |---|---|
 | **[Ember](https://ember.ks-design.art/)** | An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork. |
+| **[Fathom](https://fathom.ks-design.art/)** | Sequined goldfish drift through painted depths, an interactive meditation station in shimmer and slow water. |
 | **[Dreamboard](https://dreamboard-eta.vercel.app/)** | A lightweight visual editor for building your own vision board: goals, dreams, and inspiration in one place. |
-| **[Alex Neon](https://alex-neon.ks-design.workers.dev/)** | A neon-lit portfolio promo page designed to the client's brief, with an interactive neuro-animation to keep visitors hooked. |
+| **[Alex Neon](https://alex-neon.ks-design.workers.dev/)** | A neon-lit portfolio promo page with an interactive neuro-animation to keep visitors hooked, designed to the client's brief. |
 | **[Mikhail Orlov](https://misha.ks-design.workers.dev/)** | A no-frills, practical one-page CV portfolio for a backend developer: one clean, calm scrolling sheet. |
 
 ## How the work goes
 
-1. **I collect the meaning.** Piece by piece, I gather what matters and surface the value you bring — even the parts you don't always see yourself.
+1. **I collect the meaning.** Piece by piece, I gather what matters and surface the value you bring, even the parts you don't always see yourself.
 2. **A design concept.** I turn that direction into a focused concept and build the first version. If it clicks, we move forward. If not, I can adjust the concept to fit what you need.
 3. **Two rounds of edits.** I refine the work based on your feedback. Two rounds are included in the package. I'm always around if you want more changes later, for an extra fee.
 4. **The finished site.** You get the complete, polished website with all source files, code, and assets included. Hosting on my end can be arranged separately, for an extra fee, if you'd like.
