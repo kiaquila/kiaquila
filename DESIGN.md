@@ -45,7 +45,7 @@
 - Spacing/layout rhythm: centered hero and closing CTA, with short sections separated by clear headings and restrained rules
 - Shape/radius/elevation: GitHub-native table treatment; subtle cards only in the local preview
 - Motion: the hero GIF provides the primary motion; both the hero and contribution art switch to static sources for reduced-motion visitors
-- Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, portfolio, and email links
+- Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, portfolio, and email links; Portfolio is intentionally text-only while service-specific badges keep their icons
 
 ## Components
 
