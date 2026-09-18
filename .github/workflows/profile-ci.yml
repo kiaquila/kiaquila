@@ -57,8 +57,14 @@ jobs:
           grep -Fq 'AI Web Designer & Web Developer & Illustrator · Building AI Workflows & Automation' README.md
           grep -Fq "I use AI to design websites and illustrations that don't feel AI-made" README.md
           grep -Fq 'label=Unicorn-hub' README.md
-          grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
-          grep -Fq 'https://www.instagram.com/ks_aquila' README.md
+          grep -Fq 'https://ks-design.art' README.md
+          grep -Fq 'badge/Portfolio-4B9DDC' README.md
+          grep -Fq 'href="https://ks-design.art"' profile-preview.html
+          grep -Fq 'badge/Portfolio-4B9DDC' profile-preview.html
+          ! grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
+          ! grep -Fq 'https://www.instagram.com/ks_aquila' README.md
+          ! grep -Fq 'https://tr.pinterest.com/ks_aquila' profile-preview.html
+          ! grep -Fq 'https://www.instagram.com/ks_aquila' profile-preview.html
           grep -Fq 'https://t.me/ks_aquila' README.md
           grep -Fq 'mailto:ks@ks-design.art' README.md
           grep -Fq '## Contribution sky' README.md
