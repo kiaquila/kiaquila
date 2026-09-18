@@ -3,7 +3,7 @@
 ## Source of truth
 
 - Status: Draft
-- Last refreshed: 2026-08-31
+- Last refreshed: 2026-09-17
 - Primary product surfaces: GitHub profile `README.md`; local `profile-preview.html`
 - Evidence reviewed: current repository `README.md`; `.github/workflows/comet-graph.yml`; AlexOxytocin GitHub profile; `ks-design.art` landing page at `http://localhost:4621/#services`; current `kiaquila` repository metadata for Ember, Dreamboard, Alex Neon, and Mikhail Orlov
 
@@ -40,17 +40,17 @@
 
 ## Visual language
 
-- Color: inherit GitHub theme; the warm animated hero and generated contribution sky supply the cinematic accents; the badge strip carries the ks-design.art brand pair (`--brand-dot-a` #818CF8 into `--brand-dot-b` #22D3EE), stretched wide to violet #7C3AED / turquoise #06B6D4 so five chips read as one sweep, on the neutral ink label #55565A
+- Color: inherit GitHub theme; the warm animated hero and generated contribution sky supply the cinematic accents; the badge strip carries the ks-design.art brand pair (`--brand-dot-a` #818CF8 into `--brand-dot-b` #22D3EE), stretched wide to violet #7C3AED / turquoise #06B6D4 so four chips read as one sweep; Portfolio uses the intermediate blue #4B9DDC, and dynamic badge labels use the neutral ink #55565A
 - Typography: GitHub-native Markdown hierarchy; local preview mirrors GitHub's system type stack
 - Spacing/layout rhythm: centered hero and closing CTA, with short sections separated by clear headings and restrained rules
 - Shape/radius/elevation: GitHub-native table treatment; subtle cards only in the local preview
 - Motion: the hero GIF provides the primary motion; both the hero and contribution art switch to static sources for reduced-motion visitors
-- Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, Pinterest, Instagram, and email links
+- Imagery/iconography: user-provided animated hero, contribution sky, and a restrained Shields.io badge strip with GitHub, portfolio, and email links
 
 ## Components
 
 - Existing components to reuse: generated comet contribution `<picture>` block and reduced-motion fallback
-- New/changed components: centered animated hero with a static fallback; five-badge intro widget for followers, Unicorn Hub stars, Pinterest, Instagram, and email; service bullets; two-column projects table; numbered process list; centered email and Telegram contact line
+- New/changed components: centered animated hero with a static fallback; four-badge intro widget for followers, Unicorn Hub stars, portfolio, and email; service bullets; two-column projects table; numbered process list; centered email and Telegram contact line
 - Variants and states: GitHub light/dark themes; reduced-motion hero and contribution images
 - Token/component ownership: GitHub owns production rendering; `profile-preview.html` owns preview-only CSS
 
