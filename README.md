@@ -19,7 +19,7 @@ I use AI to design websites and illustrations that don't feel AI-made — authen
 
 [![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=7C3AED&labelColor=55565A)](https://github.com/kiaquila?tab=followers)
 [![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=7263E8&labelColor=55565A)](https://github.com/kiaquila/unicorn-hub/stargazers)
-[![Kristina Aquila portfolio](https://img.shields.io/badge/Portfolio-4B9DDC?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ks-design.art)
+[![Kristina Aquila portfolio](https://img.shields.io/badge/Portfolio-4B9DDC?style=for-the-badge)](https://ks-design.art)
 [![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-06B6D4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=55565A)](mailto:ks@ks-design.art)
 </div>
 

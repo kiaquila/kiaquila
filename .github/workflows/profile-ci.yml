@@ -61,6 +61,8 @@ jobs:
           grep -Fq 'badge/Portfolio-4B9DDC' README.md
           grep -Fq 'href="https://ks-design.art"' profile-preview.html
           grep -Fq 'badge/Portfolio-4B9DDC' profile-preview.html
+          ! grep -Fq 'logo=googlechrome' README.md
+          ! grep -Fq 'logo=googlechrome' profile-preview.html
           ! grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
           ! grep -Fq 'https://www.instagram.com/ks_aquila' README.md
           ! grep -Fq 'https://tr.pinterest.com/ks_aquila' profile-preview.html
