@@ -15,7 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: "22.18.0"
+      - name: Test native review gate
+        run: node --test tests/*.test.mjs
       - name: Validate profile artifacts
         shell: bash
         run: |
@@ -35,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Reject unresolved or stale content
         shell: bash
         run: |
@@ -46,10 +52,14 @@ jobs:
 
   ai-review:
     name: AI Review
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Verify approved profile copy contract
         shell: bash
         run: |
@@ -70,3 +80,16 @@ jobs:
           grep -Fq 'https://t.me/ks_aquila' README.md
           grep -Fq 'mailto:ks@ks-design.art' README.md
           grep -Fq '## Contribution sky' README.md
+      - name: Setup Node for native review
+        if: github.event_name == 'pull_request'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: "22.18.0"
+      - name: Require native Codex review of the current head
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CODEX_REVIEW_PR_NUMBER: ${{ github.event.pull_request.number }}
+          CODEX_REVIEW_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          CODEX_REVIEW_WAIT_MS: "900000"
+        run: node scripts/check-codex-review.mjs
