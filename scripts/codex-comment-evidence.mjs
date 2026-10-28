@@ -1,5 +1,6 @@
 import {
   hasCleanCodexState,
+  hasCodexStateClockBounds,
   codexNegativeCompletionTime,
   isCodexStateBody,
   codexCodeReviewCompletionTime,
@@ -116,7 +117,6 @@ const codexCleanClosings = new Set(
 export const classifyCodexSummaryComment = (
   comment,
   headSha,
-  { allowUnboundLegacy = false } = {},
 ) => {
   const pending = {
     outcome: "pending",
@@ -126,7 +126,8 @@ export const classifyCodexSummaryComment = (
   };
   if (!matchesCodexSummaryComment(comment)) return pending;
   if (isCodexStateBody(getBody(comment))) {
-    return hasCleanCodexState(getBody(comment), headSha)
+    return hasCleanCodexState(getBody(comment), headSha) &&
+      hasCodexStateClockBounds(comment, headSha)
       ? {
           outcome: "pass",
           reason:
@@ -174,7 +175,7 @@ export const classifyCodexSummaryComment = (
       !headSha.startsWith(shaLine[1])
     )
       return pending;
-  } else if (receipt || !allowUnboundLegacy) {
+  } else {
     return pending;
   }
   return {
@@ -225,7 +226,7 @@ export const pickAuthoritativeCodexSkipModeComment = ({
     );
   const stateBoundaryTime = Date.parse(events[boundaryIndex]?.created_at || "");
   const eligibleState = (entry) => {
-    if (activationIndex < 0) return false;
+    if (activationIndex < 0 || !hasCodexStateClockBounds(entry, headSha)) return false;
     const completedAt = codexCodeReviewCompletionTime(getBody(entry));
     const activationTime = Date.parse(
       events[activationIndex]?.created_at || "",
@@ -266,9 +267,7 @@ export const pickAuthoritativeCodexSkipModeComment = ({
         ? Math.floor(codexCodeReviewCompletionTime(getBody(entry)) / 1000) *
           1000
         : !isCodexStateBody(getBody(entry)) &&
-            classifyCodexSummaryComment(entry, headSha, {
-              allowUnboundLegacy: true,
-            }).outcome === "pass"
+            classifyCodexSummaryComment(entry, headSha).outcome === "pass"
           ? Date.parse(entry.created_at || "") || 0
           : codexCommentTimestamp(entry);
   const eligibleStaticApproval = (entry) => {
@@ -355,13 +354,7 @@ export const pickAuthoritativeCodexSkipModeComment = ({
         }
       : null) ||
     classifyCodexSetupReply(entry) ||
-    classifyCodexSummaryComment(entry, headSha, {
-      allowUnboundLegacy: timelineComments.some(
-        (candidate) =>
-          candidate === entry ||
-          (entry.id != null && candidate.id === entry.id),
-      ),
-    });
+    classifyCodexSummaryComment(entry, headSha);
   // A canonical completed null/null snapshot describes lifecycle, not a
   // verdict or withdrawal. The connector publishes the independent receipt
   // before this final summary edit. Pair only a fresh immutable SHA-bound

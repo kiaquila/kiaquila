@@ -438,3 +438,25 @@ export const codexNegativeCompletionTime = (entry, head) => {
     ),
   );
 };
+
+// A code receipt cannot finish a separate security review. Keep every current-
+// head pending security observation until a later canonical security completion.
+export const hasCodexPendingSecurityHistory = (comments, head, isTrusted) => {
+ let pending=-Infinity, clean=-Infinity;
+ for(const entry of comments){
+  if(!isTrusted(entry)) continue;
+  const body=entry.body || "";
+  const canonical=parseCodexState(body,head,{sectionHeads:true});
+  const parsed=canonical || parseCodexState(body,head,{sectionHeads:true,negativeEnvelope:true});
+  if(!parsed || parsed.state.security_review.commit_sha!==head) continue;
+  const observed=Date.parse(entry.updated_at || entry.created_at || "");
+  if(!Number.isFinite(observed)) continue;
+  const review=parsed.state.security_review;
+  if(!cleanReview(review,head)) pending=Math.max(pending,Math.floor(observed/1000));
+  else if(canonical && completionClocksWithinObservation(parsed,observed)){
+   const completed=parsed.times.security_review, created=Date.parse(entry.created_at || "");
+   if(Number.isFinite(completed) && Number.isFinite(created) && Math.floor(completed/1000)>=Math.floor(created/1000)) clean=Math.max(clean,Math.floor(completed/1000));
+  }
+ }
+ return pending!==-Infinity && clean<=pending;
+};

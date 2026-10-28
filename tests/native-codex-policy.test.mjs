@@ -42,3 +42,30 @@ test("structured completion, pending state and independent security findings rem
  const security=cleanStateBody(head,state=>({...state,security_review:{commit_sha:head,has_any_findings:true,has_unresolved_findings:true,status:"completed"}}));
  assert.equal(evaluate([record(security),record(receipt,{id:3,created_at:"2026-10-20T12:03:00Z",updated_at:"2026-10-20T12:03:00Z"})]).reviewed,false);
 });
+
+test("reply order never replaces reviewed commit identity",()=>{
+ assert.equal(evaluate([record("Codex Review: Didn't find any major issues.")]).reviewed,false);
+ assert.equal(evaluate([record("Codex Review: Didn't find any major issues. Nice work!")]).reviewed,false);
+});
+test("formal approval needs a complete current-head verdict",()=>{
+ const review={user:bot,commit_id:head,state:"APPROVED",submitted_at:"2026-10-20T12:03:00Z"};
+ assert.equal(evaluate([],{reviews:[{...review,body:""}]}).reviewed,false);
+ assert.equal(evaluate([],{reviews:[{...review,body:receipt}]}).reviewed,true);
+ assert.equal(evaluate([],{reviews:[{...review,body:receipt+"\nCredentials leak."}]}).reviewed,false);
+});
+test("all completed code and security clocks fit the observed comment",()=>{
+ const state=cleanStateBody(head,s=>({...s,security_review:{...s.code_review}}));
+ const row=time=>`\n| 🔒 **Security Review** | ✅ **Completed** <relative-time datetime="${time}">${time}</relative-time> | \`${head.slice(0,7)}\` | Manual request |`;
+ assert.equal(evaluate([record(state+row("2026-10-20T12:02:00Z"))]).reviewed,true);
+ assert.equal(evaluate([record(state+row("2099-10-20T12:02:00Z"))]).reviewed,false);
+});
+
+test("a newer code receipt cannot finish running or failed security review",()=>{
+ const row=(status,time)=>`\n| 🔒 **Security Review** | ${status} <relative-time datetime="${time}">${time}</relative-time> | \`${head.slice(0,7)}\` | Manual request |`;
+ const running=cleanStateBody(head,s=>({...s,security_review:{commit_sha:head,has_any_findings:null,has_unresolved_findings:null,status:"running"}}))+row("🔄 **Running** since","2026-10-20T12:02:00Z");
+ const later=record(receipt,{id:3,created_at:"2026-10-20T12:03:00Z",updated_at:"2026-10-20T12:03:00Z"});
+ assert.equal(evaluate([record(running),later]).reviewed,false);
+ const completed=cleanStateBody(head,s=>({...s,security_review:{...s.code_review}}))+row("✅ **Completed**","2026-10-20T12:04:00Z");
+ assert.equal(evaluate([record(running),later,record(completed,{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,true);
+ assert.equal(evaluate([record(running),later,record(completed.replaceAll("12:04:00Z","2099-10-20T12:04:00Z"),{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,false);
+});
