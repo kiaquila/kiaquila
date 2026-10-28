@@ -67,5 +67,5 @@ test("a newer code receipt cannot finish running or failed security review",()=>
  assert.equal(evaluate([record(running),later]).reviewed,false);
  const completed=cleanStateBody(head,s=>({...s,security_review:{...s.code_review}}))+row("✅ **Completed**","2026-10-20T12:04:00Z");
  assert.equal(evaluate([record(running),later,record(completed,{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,true);
- assert.equal(evaluate([record(running),later,record(completed.replaceAll("12:04:00Z","2099-10-20T12:04:00Z"),{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,false);
+ assert.equal(evaluate([record(running),later,record(completed.replaceAll("2026-10-20T12:04:00Z","2099-10-20T12:04:00Z"),{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,false);
 });

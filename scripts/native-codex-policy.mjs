@@ -46,10 +46,10 @@ export function evaluateNativeEvidence({ head, comments = [], reviews = [], thre
     issueComments: eligible.filter(bot),
   });
   if (hasCodexNegativeHistory(eligible, head, bot)) blocking.push("Native findings history is not cleared by a newer valid completion");
-  if (hasCodexPendingSecurityHistory(eligible, head, bot)) blocking.push("Current-head security review has no later canonical clean completion");
+  const pendingSecurity = hasCodexPendingSecurityHistory(eligible, head, bot);
   const approved = nativeReviews.some(review => (review.commit_id || review.commit?.oid) === head &&
     review.state === "APPROVED" && Date.parse(review.submitted_at || review.submittedAt || "") > stamp(request) &&
     isNativeCleanComment({...review, created_at: review.submitted_at || review.submittedAt, updated_at: review.submitted_at || review.submittedAt}, head));
   const reviewed = decision ? decision.classification.outcome === "pass" : approved;
-  return { head, reviewed: reviewed && blocking.length === 0, blocking };
+  return { head, reviewed: reviewed && blocking.length === 0 && !pendingSecurity, blocking, pendingSecurity };
 }
