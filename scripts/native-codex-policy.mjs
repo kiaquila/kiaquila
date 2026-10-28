@@ -39,7 +39,16 @@ export function evaluateNativeEvidence({ head, comments = [], reviews = [], thre
       blocking.push("Current-head native review still requests changes");
   }
   if (!request) return { head, reviewed: false, blocking };
-  const eligible = normalized.filter(entry => bot(entry) || entry === request)
+  // Formal and comment verdicts share one ordered evidence stream. A full
+  // later approval can supersede an older comment, while later unknown or
+  // negative evidence still vetoes it. Review state alone never grants approval.
+  const formalApprovals = nativeReviews.filter(review => review.state === "APPROVED" &&
+    (review.commit_id || review.commit?.oid) === head).map(review => ({...review,
+      id: `review-${review.id}`,
+      created_at: review.submitted_at || review.submittedAt,
+      updated_at: review.submitted_at || review.submittedAt,
+    }));
+  const eligible = [...normalized.filter(entry => bot(entry) || entry === request), ...formalApprovals]
     .sort((a,b) => stamp(a)-stamp(b) || Number(a.id)-Number(b.id));
   const decision = pickAuthoritativeCodexSkipModeComment({ headSha: head,
     timelineEvents: [{ event: "committed", sha: head, created_at: request.created_at }, ...eligible],
@@ -47,9 +56,6 @@ export function evaluateNativeEvidence({ head, comments = [], reviews = [], thre
   });
   if (hasCodexNegativeHistory(eligible, head, bot)) blocking.push("Native findings history is not cleared by a newer valid completion");
   const pendingSecurity = hasCodexPendingSecurityHistory(eligible, head, bot);
-  const approved = nativeReviews.some(review => (review.commit_id || review.commit?.oid) === head &&
-    review.state === "APPROVED" && Date.parse(review.submitted_at || review.submittedAt || "") > stamp(request) &&
-    isNativeCleanComment({...review, created_at: review.submitted_at || review.submittedAt, updated_at: review.submitted_at || review.submittedAt}, head));
-  const reviewed = decision ? decision.classification.outcome === "pass" : approved;
+  const reviewed = decision?.classification.outcome === "pass";
   return { head, reviewed: reviewed && blocking.length === 0 && !pendingSecurity, blocking, pendingSecurity };
 }

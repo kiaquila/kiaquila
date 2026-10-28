@@ -69,3 +69,12 @@ test("a newer code receipt cannot finish running or failed security review",()=>
  assert.equal(evaluate([record(running),later,record(completed,{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,true);
  assert.equal(evaluate([record(running),later,record(completed.replaceAll("2026-10-20T12:04:00Z","2099-10-20T12:04:00Z"),{id:4,updated_at:"2026-10-20T12:04:00Z"})]).reviewed,false);
 });
+
+test("new formal verdicts supersede old comments and preserve later vetoes",()=>{
+ const old=record(receipt,{created_at:"2026-10-20T11:59:00Z",updated_at:"2026-10-20T11:59:00Z"});
+ const review={id:10,user:bot,commit_id:head,state:"APPROVED",body:receipt,submitted_at:"2026-10-20T12:03:00Z"};
+ assert.equal(evaluate([old],{reviews:[review]}).reviewed,true);
+ const newer=record(receipt+"\nCredentials leak.",{id:11,created_at:"2026-10-20T12:04:00Z",updated_at:"2026-10-20T12:04:00Z"});
+ assert.equal(evaluate([old,newer],{reviews:[review]}).reviewed,false);
+ assert.equal(evaluate([record(receipt)],{reviews:[{...review,body:"Unknown native verdict"}]}).reviewed,false);
+});
