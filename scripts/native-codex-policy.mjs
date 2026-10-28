@@ -44,14 +44,17 @@ export function evaluateNativeEvidence({ head, comments = [], reviews = [], thre
   // negative evidence still vetoes it. Review state alone never grants approval.
   const formalApprovals = nativeReviews.filter(review => review.state === "APPROVED" &&
     (review.commit_id || review.commit?.oid) === head).map(review => ({...review,
-      id: `review-${review.id}`,
+      id: `review-${review.id}`, nativeFormalApproval: true,
       created_at: review.submitted_at || review.submittedAt,
       updated_at: review.submitted_at || review.submittedAt,
     }));
   const eligible = [...normalized.filter(entry => bot(entry) || entry === request), ...formalApprovals]
     .sort((a,b) => stamp(a)-stamp(b) || Number(a.id)-Number(b.id));
   const decision = pickAuthoritativeCodexSkipModeComment({ headSha: head,
-    timelineEvents: [{ event: "committed", sha: head, created_at: request.created_at }, ...eligible],
+    // Separate API connections do not prove same-second cross-type order.
+    // Formal evidence stays outside the issue-comment timeline; its missing
+    // timeline position makes mixed ties retain every unknown/negative veto.
+    timelineEvents: [{ event: "committed", sha: head, created_at: request.created_at }, ...eligible.filter(entry => !entry.nativeFormalApproval)],
     issueComments: eligible.filter(bot),
   });
   if (hasCodexNegativeHistory(eligible, head, bot)) blocking.push("Native findings history is not cleared by a newer valid completion");

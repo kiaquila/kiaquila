@@ -78,3 +78,26 @@ test("new formal verdicts supersede old comments and preserve later vetoes",()=>
  assert.equal(evaluate([old,newer],{reviews:[review]}).reviewed,false);
  assert.equal(evaluate([record(receipt)],{reviews:[{...review,body:"Unknown native verdict"}]}).reviewed,false);
 });
+
+test("an earlier receipt never suppresses a later lifecycle-only completion",()=>{
+ const lifecycle=cleanStateBody(head,s=>({...s,code_review:{...s.code_review,has_any_findings:null,has_unresolved_findings:null}})).replaceAll("2026-10-20T12:02:00Z","2026-10-20T12:05:00Z");
+ const summary=record(lifecycle,{id:2,created_at:"2026-10-20T12:01:00Z",updated_at:"2026-10-20T12:05:00Z"});
+ const earlier=record(receipt,{id:3});
+ assert.equal(evaluate([summary,earlier]).reviewed,false);
+ const later=record(receipt,{id:4,created_at:"2026-10-20T12:06:00Z",updated_at:"2026-10-20T12:06:00Z"});
+ assert.equal(evaluate([summary,earlier,later]).reviewed,true);
+ const clean=record(cleanStateBody(head).replaceAll("2026-10-20T12:02:00Z","2026-10-20T12:05:00Z"),{id:5,created_at:"2026-10-20T12:01:00Z",updated_at:"2026-10-20T12:05:00Z"});
+ assert.equal(evaluate([clean,earlier]).reviewed,true);
+});
+
+test("mixed same-second formal and comment evidence keeps every veto",()=>{
+ const time="2026-10-20T12:03:00Z";
+ const review={id:10,user:bot,commit_id:head,state:"APPROVED",body:receipt,submitted_at:time};
+ const same=record(receipt+"\nCredentials leak.",{id:11,created_at:time,updated_at:time});
+ assert.equal(evaluate([same],{reviews:[review]}).reviewed,false);
+ assert.equal(evaluate([record(receipt),same],{reviews:[review]}).reviewed,false);
+ assert.equal(evaluate([same,record(receipt)],{reviews:[review]}).reviewed,false);
+ const clean=record(receipt,{id:11,created_at:time,updated_at:time});
+ assert.equal(evaluate([clean],{reviews:[review]}).reviewed,true);
+ assert.equal(evaluate([],{reviews:[review,{...review,id:12,body:"Unknown native verdict"}]}).reviewed,false);
+});

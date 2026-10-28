@@ -4,7 +4,6 @@ import {
   codexNegativeCompletionTime,
   isCodexStateBody,
   codexCodeReviewCompletionTime,
-  isCompletedCodexLifecycle,
 } from "./codex-review-state.mjs";
 import { isKnownCodexHelpFooter } from "./codex-review-help.mjs";
 
@@ -355,32 +354,10 @@ export const pickAuthoritativeCodexSkipModeComment = ({
       : null) ||
     classifyCodexSetupReply(entry) ||
     classifyCodexSummaryComment(entry, headSha);
-  // A canonical completed null/null snapshot describes lifecycle, not a
-  // verdict or withdrawal. The connector publishes the independent receipt
-  // before this final summary edit. Pair only a fresh immutable SHA-bound
-  // receipt with the same code completion; null alone never grants approval.
-  // Other states (including running/security/unknown text) keep their veto.
-  const authoritativeCandidates = candidates.filter((entry) => {
-    if (
-      !eligibleState(entry) ||
-      !isCompletedCodexLifecycle(getBody(entry), headSha)
-    )
-      return true;
-    const created = Date.parse(entry.created_at || "");
-    const completed = codexCodeReviewCompletionTime(getBody(entry));
-    return !candidates.some((receipt) => {
-      const published = Date.parse(receipt.created_at || "");
-      return (
-        !isCodexStateBody(getBody(receipt)) &&
-        /\*\*Reviewed commit:\*\*/.test(getBody(receipt)) &&
-        classifyCodexSummaryComment(receipt, headSha).outcome === "pass" &&
-        eligibleStaticApproval(receipt) &&
-        codexCommentTimestamp(receipt) === published &&
-        published >= created &&
-        published <= completed
-      );
-    });
-  });
+  // A lifecycle-only completion is not a verdict. A receipt from earlier
+  // in a mutable summary's lifetime cannot prove this later review completed
+  // cleanly. Keep the normal evidence ordering and every later unknown veto.
+  const authoritativeCandidates = candidates;
   const latestTimestamp = Math.max(
     0,
     ...authoritativeCandidates.map(evidenceTime),
