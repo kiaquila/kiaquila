@@ -69,6 +69,7 @@ jobs:
             grep -Fq 'I build QA processes and test automation from scratch.' "$file"
             grep -Fq 'label=Unicorn-hub' "$file"
             grep -Fq 'mailto:krisredlips@gmail.com' "$file"
+            grep -Fq 'https://github.com/sponsors/kiaquila' "$file"
             grep -Fq 'https://t.me/vibecodesh' "$file"
             grep -Fq 'https://t.me/+1k8AU1O9-o04MTRi' "$file"
             grep -Fq 'https://github.com/kiaquila/unicorn-hub' "$file"
