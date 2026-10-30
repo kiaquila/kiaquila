@@ -64,21 +64,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -Fq 'AI Web Designer & Web Developer & Illustrator · Building AI Workflows & Automation' README.md
-          grep -Fq "I use AI to design websites and illustrations that don't feel AI-made" README.md
-          grep -Fq 'label=Unicorn-hub' README.md
-          grep -Fq 'https://ks-design.art' README.md
-          grep -Fq 'badge/Portfolio-4B9DDC' README.md
-          grep -Fq 'href="https://ks-design.art"' profile-preview.html
-          grep -Fq 'badge/Portfolio-4B9DDC' profile-preview.html
-          ! grep -Fq 'logo=googlechrome' README.md
-          ! grep -Fq 'logo=googlechrome' profile-preview.html
-          ! grep -Fq 'https://tr.pinterest.com/ks_aquila' README.md
-          ! grep -Fq 'https://www.instagram.com/ks_aquila' README.md
-          ! grep -Fq 'https://tr.pinterest.com/ks_aquila' profile-preview.html
-          ! grep -Fq 'https://www.instagram.com/ks_aquila' profile-preview.html
-          grep -Fq 'https://t.me/ks_aquila' README.md
-          grep -Fq 'mailto:ks@ks-design.art' README.md
+          for file in README.md profile-preview.html; do
+            grep -Fq 'QA Automation Lead · AI-Assisted Development' "$file"
+            grep -Fq 'I build QA processes and test automation from scratch.' "$file"
+            grep -Fq 'label=Unicorn-hub' "$file"
+            grep -Fq 'mailto:krisredlips@gmail.com' "$file"
+            grep -Fq 'https://t.me/vibecodesh' "$file"
+            grep -Fq 'https://t.me/+1k8AU1O9-o04MTRi' "$file"
+            grep -Fq 'https://github.com/kiaquila/unicorn-hub' "$file"
+            grep -Fq 'https://github.com/kiaquila/capsule-zero' "$file"
+            grep -Fq 'https://github.com/kiaquila/comet-contribution-graph' "$file"
+            ! grep -Eq 'ks-design\.art|badge/Portfolio|Tools I use|AI Web Designer|How the work goes' "$file"
+            ! grep -Eq 'MY\.GAMES|LitRes|at VK' "$file"
+          done
           grep -Fq '## Contribution sky' README.md
       - name: Setup Node for native review
         if: github.event_name == 'pull_request'
