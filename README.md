@@ -13,47 +13,46 @@
 
 # Kristina Aquila
 
-**AI Web Designer & Web Developer & Illustrator · Building AI Workflows & Automation**
+**QA Automation Lead · AI-Assisted Development**
 
-I use AI to design websites and illustrations that don't feel AI-made — authentic, memorable, and impossible to scroll past.
+I build QA processes and test automation from scratch.
 
 [![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=7C3AED&labelColor=55565A)](https://github.com/kiaquila?tab=followers)
 [![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=7263E8&labelColor=55565A)](https://github.com/kiaquila/unicorn-hub/stargazers)
-[![Kristina Aquila portfolio](https://img.shields.io/badge/Portfolio-4B9DDC?style=for-the-badge)](https://ks-design.art)
-[![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-06B6D4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=55565A)](mailto:ks@ks-design.art)
+[![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-06B6D4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=55565A)](mailto:krisredlips@gmail.com)
 </div>
 
-## What I do
+My experience includes QA work on a fintech payment gateway, an AI assistant at a large company, and a high-load e-commerce platform.
 
-- **Landing pages:** a full single-page site, from the first idea through a finished, responsive build.
-- **Websites:** multi-page sites that stay consistent in structure, style, and feel from page to page.
-- **Illustrations:** custom AI-assisted illustrations with their own mood and art direction, made specifically for your project.
+Today, I also build my own projects, including Capsule Zero, a platform for creating capsule wardrobes. In this project, I apply test automation best practices with AI coding tools and use Unicorn Hub, my harness for multi-agent development. It brings together quality gates, code review, automated checks, and release workflows.
+
+## What I work on
+
+- **QA processes:** test strategies, test cases, documentation, and bug management.
+- **Test automation:** frontend, backend, and API testing with Playwright, TypeScript, JavaScript, and Nightwatch.js.
+- **AI-assisted development:** multi-agent workflows with explicit specifications, independent review, and CI checks.
 
 ## Selected projects
 
 | Project | What it is |
 |---|---|
-| **[Ember](https://ember.ks-design.art/)** | An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork. |
-| **[Fathom](https://fathom.ks-design.art/)** | Sequined goldfish drift through painted depths, an interactive meditation station in shimmer and slow water. |
-| **[Dreamboard](https://dreamboard-eta.vercel.app/)** | A lightweight visual editor for building your own vision board: goals, dreams, and inspiration in one place. |
-| **[Alex Neon](https://alex-neon.ks-design.workers.dev/)** | A neon-lit portfolio promo page with an interactive neuro-animation to keep visitors hooked, designed to the client's brief. |
-| **[Mikhail Orlov](https://misha.ks-design.workers.dev/)** | A no-frills, practical one-page CV portfolio for a backend developer: one clean, calm scrolling sheet. |
+| **[Unicorn Hub](https://github.com/kiaquila/unicorn-hub)** | My harness for multi-agent development, with specifications, quality gates, code review, and CI checks. |
+| **[Capsule Zero](https://github.com/kiaquila/capsule-zero)** | A platform for creating capsule wardrobes, built with AI agents and automated quality checks. |
+| **[Comet Contribution Graph](https://github.com/kiaquila/comet-contribution-graph)** | A GitHub Action that turns contribution history into an animated constellation. |
 
-## How the work goes
+## Beyond engineering
 
-1. **I collect the meaning.** Piece by piece, I gather what matters and surface the value you bring, even the parts you don't always see yourself.
-2. **A design concept.** I turn that direction into a focused concept and build the first version. If it clicks, we move forward. If not, I can adjust the concept to fit what you need.
-3. **Two rounds of edits.** I refine the work based on your feedback. Two rounds are included in the package. I'm always around if you want more changes later, for an extra fee.
-4. **The finished site.** You get the complete, polished website with all source files, code, and assets included. Hosting on my end can be arranged separately, for an extra fee, if you'd like.
+I also create interactive web art and AI-assisted illustrations, share practical notes on AI development, and help run an AI engineering community.
 
----
+[Telegram channel](https://t.me/vibecodesh) · [AI engineering community](https://t.me/+1k8AU1O9-o04MTRi)
 
-<div align="center">
+## Get in touch
 
-### Let's make your brand impossible to ignore
+I’m open to remote QA automation opportunities where I can combine my testing experience with AI-assisted development.
 
-[Email](mailto:ks@ks-design.art) · [Telegram](https://t.me/ks_aquila)
-</div>
+Based in Buenos Aires, Argentina.
+
+[LinkedIn](https://www.linkedin.com/in/kiaquila/) · [Email](mailto:krisredlips@gmail.com)
 
 ## Contribution sky
 
