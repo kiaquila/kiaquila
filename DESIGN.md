@@ -25,8 +25,8 @@ Canonical sections: “What I work on,” “Selected projects,” “Beyond eng
 
 - GitHub-native Markdown and minimal HTML; inherit the production theme.
 - Preserve the existing animated hero, static fallback, and contribution graph.
-- Keep a compact badge strip for GitHub followers, Unicorn Hub stars, and email.
-- Badge colors: violet `#7C3AED`, purple `#7263E8`, turquoise `#06B6D4`, and neutral labels `#55565A`.
+- Keep a compact badge strip for GitHub followers, Unicorn Hub stars, email, and GitHub Sponsors, in that order.
+- Badge colors: violet `#7C3AED`, purple `#7263E8`, turquoise `#06B6D4`, sponsor cyan `#22D3EE`, and neutral labels `#55565A`.
 - Use short paragraphs, native headings, and a two-column project table.
 - Local preview uses system fonts and mirrors the README without implying unsupported GitHub styling.
 
@@ -41,6 +41,7 @@ Canonical sections: “What I work on,” “Selected projects,” “Beyond eng
 
 - Email: `krisredlips@gmail.com`.
 - LinkedIn: `https://www.linkedin.com/in/kiaquila/`.
+- Sponsorship: `https://github.com/sponsors/kiaquila`; the Sponsor heart badge follows email in the hero strip.
 - Channel: `https://t.me/vibecodesh`.
 - Community: `https://t.me/+1k8AU1O9-o04MTRi`, sourced from channel pinned message 146.
 - Place the channel and community next to each other; omit the creative portfolio link.

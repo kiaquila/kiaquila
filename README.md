@@ -20,6 +20,7 @@ I build QA processes and test automation from scratch.
 [![GitHub followers](https://img.shields.io/github/followers/kiaquila?style=for-the-badge&logo=github&label=Follow&color=7C3AED&labelColor=55565A)](https://github.com/kiaquila?tab=followers)
 [![Unicorn Hub stars](https://img.shields.io/github/stars/kiaquila/unicorn-hub?style=for-the-badge&logo=github&label=Unicorn-hub&color=7263E8&labelColor=55565A)](https://github.com/kiaquila/unicorn-hub/stargazers)
 [![Email Kristina](https://img.shields.io/badge/Email-Let%27s%20talk-06B6D4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=55565A)](mailto:krisredlips@gmail.com)
+[![Sponsor Kristina](https://img.shields.io/badge/Sponsor-%E2%9D%A4-22D3EE?style=for-the-badge&logo=github&logoColor=white&labelColor=55565A)](https://github.com/sponsors/kiaquila)
 </div>
 
 My experience includes QA work on a fintech payment gateway, an AI assistant at a large company, and a high-load e-commerce platform.
