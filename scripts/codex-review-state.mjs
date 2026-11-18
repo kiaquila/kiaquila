@@ -35,6 +35,28 @@ const summaryHelp = `[Your team has set up Codex to review pull requests in this
 Codex reacts with 👀 while any review is running, comments if it has suggestions, and reacts with 👍 once all reviews finish with no findings.`;
 const normalize = (text) => text.replace(/\s+/g, " ").trim();
 
+// GitHub now wraps the native summary in an outer disclosure. Translate only
+// that exact envelope; the existing schema, table, footer and clock checks still
+// validate its contents. A disclosure title alone never establishes approval.
+const expandCollapsibleSummary = (body) => {
+  const match = String(body || "").match(
+    /^(<!-- codex-pull-request-review-summary -->\n<!-- codex-review-state:v1 (\{[^\r\n]+\}) -->)\n\n<details>\n<summary><strong>Codex Review Summary<\/strong>: (✅ Completed|🔄 Running)<\/summary>\n\n([\s\S]*)\n<\/details>$/,
+  );
+  if (!match) return body;
+  try {
+    const active = Object.values(JSON.parse(match[2])).filter(
+      (review) => review?.status !== null,
+    );
+    const title = active.length && active.every((review) => review?.status === "completed")
+      ? "✅ Completed"
+      : active.some((review) => review?.status === "running") ? "🔄 Running" : null;
+    if (match[3] !== title) return body;
+  } catch {
+    return body;
+  }
+  return `${match[1]}\n\n## Codex Review Summary\n\n${match[4]}`;
+};
+
 // Native clocks are UTC ISO calendar dates. Date.parse alone also accepts prose
 // and silently rolls impossible dates into another month.
 const canonicalTimestamp = (value) => {
@@ -57,6 +79,7 @@ export const parseCodexState = (
   { sectionHeads = false, negativeEnvelope = false } = {},
 ) => {
   if (!/^[a-f0-9]{40}$/.test(head || "")) return false;
+  body = expandCollapsibleSummary(body);
   const rawMarkerLine = String(body || "").match(
     /^[^\r\n]*<!-- codex-pull-request-review-summary -->[^\r\n]*$/m,
   )?.[0];
