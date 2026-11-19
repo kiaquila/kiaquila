@@ -33,6 +33,7 @@ I use AI to design websites and illustrations that don't feel AI-made — authen
 
 | Project | What it is |
 |---|---|
+| **[menu.ks-design.art](https://menu.ks-design.art/)** | We create animated menus that sell and turn everyday phone snapshots of dishes into images worthy of a professional food shoot. |
 | **[Ember](https://ember.ks-design.art/)** | An interactive piece where a neural sphere burns down and rises again like a phoenix, timed to the sound of a deep tuning fork. |
 | **[Fathom](https://fathom.ks-design.art/)** | Sequined goldfish drift through painted depths, an interactive meditation station in shimmer and slow water. |
 | **[Dreamboard](https://dreamboard-eta.vercel.app/)** | A lightweight visual editor for building your own vision board: goals, dreams, and inspiration in one place. |
